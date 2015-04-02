@@ -137,7 +137,8 @@ public class ChestOpen implements Listener {
             } else {
                 if (CratesPlus.getPlugin().getConfig().getBoolean("Crate Previews")) {
                     List<String> items = CratesPlus.getPlugin().getConfig().getStringList("Crate Items." + crateType.getCode());
-                    Inventory inventory = Bukkit.createInventory(null, (items.size() + 8) / 9 * 9, crateType.getCode(true) + " Possible Wins:");
+                    Integer size = (int) Math.ceil(items.size() / 9) * 9;
+                    Inventory inventory = Bukkit.createInventory(null, size, crateType.getCode(true) + " Possible Wins:");
                     for (String i : items) {
                         String[] args = i.split(":", -1);
                         if (args.length >= 2 && args[0].equalsIgnoreCase("command")) {
