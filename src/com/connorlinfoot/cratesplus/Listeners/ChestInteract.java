@@ -142,7 +142,20 @@ public class ChestInteract implements Listener {
             } else {
                 if (CratesPlus.getPlugin().getConfig().getBoolean("Crate Previews")) {
                     List<String> items = CratesPlus.getPlugin().getConfig().getStringList("Crate Items." + crateType.getCode());
-                    Integer size = (int) Math.ceil(items.size() / 9) * 9;
+                    Integer size;
+                    if (items.size() <= 9) {
+                        size = 9;
+                    } else if (items.size() <= 18) {
+                        size = 18;
+                    } else if (items.size() <= 27) {
+                        size = 27;
+                    } else if (items.size() <= 36) {
+                        size = 36;
+                    } else if (items.size() <= 45) {
+                        size = 45;
+                    } else {
+                        size = 54;
+                    }
                     Inventory inventory = Bukkit.createInventory(null, size, crateType.getCode(true) + " Possible Wins:");
                     for (String i : items) {
                         String[] args = i.split(":", -1);
