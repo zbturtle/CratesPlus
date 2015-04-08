@@ -12,9 +12,12 @@ Changeslogs:
 NOTE: As 2.0 is currently in development no more updates of 1.x will be released EXCEPT for bug fixes if required. There is currently no ETA of 2.0 as it is going to be quite a major update and I don't have lots of time to work on it.
 
 2.1/TODO (Plans, Not Yet Being Worked On):
- - In-Game crate editing
+ - In-Game crate editing/managing
  - Better titles
  - Custom crate types
+
+2.0.1:
+ - Fixed an issue with not been able to run "/crate key" without specifying a key type (Thanks to kyle1264x on Spigot for reporting this)
 
 2.0:
  - An all new config layout (Old versions will be converted to the new version on first run and a backup of the orginal will be given via a link)
