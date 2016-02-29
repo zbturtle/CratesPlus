@@ -1,5 +1,5 @@
 V3.1.4:
- Download: https://www.spigotmc.org/resources/cratesplus-custom-crates-free.5018/download?version=71808
+ Download: https://www.spigotmc.org/resources/cratesplus-custom-crates-free.5018/download?version=71810
  - Added compatibility with 1.8 AND 1.9 ;D
 
 V3.1.3:
