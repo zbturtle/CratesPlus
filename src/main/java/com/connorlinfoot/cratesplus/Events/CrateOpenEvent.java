@@ -150,7 +150,17 @@ public class CrateOpenEvent extends Event {
                     if (timer == maxTimeTicks) {
                         itemMeta.setDisplayName(ChatColor.RESET + "Winner!");
                     } else {
-                        player.playSound(player.getLocation(), Sound.BLOCK_NOTE_HARP, (float) 0.2, 2);
+                        Sound sound = null;
+                        try {
+                            sound = Sound.valueOf("NOTE_PIANO");
+                        } catch (Exception e) {
+                            try {
+                                sound = Sound.valueOf("BLOCK_NOTE_HARP");
+                            } catch (Exception ee) {
+                                return; // This should never happen!
+                            }
+                        }
+                        player.playSound(player.getLocation(), sound, (float) 0.2, 2);
                         itemMeta.setDisplayName(ChatColor.RESET + "Rolling...");
                     }
                     itemStack.setItemMeta(itemMeta);

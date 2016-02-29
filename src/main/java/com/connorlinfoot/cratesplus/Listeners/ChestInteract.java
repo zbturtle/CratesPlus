@@ -59,7 +59,17 @@ public class ChestInteract implements Listener {
                     CrateOpenEvent crateOpenEvent = new CrateOpenEvent(player, crateType);
                     if (!crateOpenEvent.isCanceled()) {
                         // Open chest sound TODO add close sound?
-                        player.getLocation().getWorld().playSound(player.getLocation(), Sound.BLOCK_CHEST_OPEN, 10, 1);
+                        Sound sound = null;
+                        try {
+                            sound = Sound.valueOf("CHEST_OPEN");
+                        } catch (Exception e) {
+                            try {
+                                sound = Sound.valueOf("BLOCK_CHEST_OPEN");
+                            } catch (Exception ee) {
+                                return; // This should never happen!
+                            }
+                        }
+                        player.getLocation().getWorld().playSound(player.getLocation(), sound, 10, 1);
                         crateOpenEvent.doEvent();
                     }
                 } else {
