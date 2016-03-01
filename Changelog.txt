@@ -1,3 +1,7 @@
+V3.1.5:
+ Download: https://www.spigotmc.org/resources/cratesplus-custom-crates-1-8-1-9-free.5018/download?version=71841
+ - Fixed bug with it giving 2 items on win!
+
 V3.1.4:
  Download: https://www.spigotmc.org/resources/cratesplus-custom-crates-free.5018/download?version=71810
  - Added compatibility with 1.8 AND 1.9 ;D
