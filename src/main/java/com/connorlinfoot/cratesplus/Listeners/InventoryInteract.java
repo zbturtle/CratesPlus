@@ -9,7 +9,7 @@ public class InventoryInteract implements Listener {
 
     @EventHandler(ignoreCancelled = true)
     public void onInventoryClick(InventoryClickEvent event) {
-        if (event.getClickedInventory() == null)
+        if (event.getInventory() == null)
             return;
         if (event.getInventory().getTitle() != null && event.getInventory().getTitle().contains("Possible Wins:")) {
             event.setCancelled(true);
