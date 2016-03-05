@@ -126,7 +126,8 @@ public class Winning {
             displayName = ChatColor.translateAlternateColorCodes('&', config.getString(path + ".Name"));
         if (!displayName.equals(""))
             winningItemStackItemMeta.setDisplayName(displayName);
-        winningItemStack.setItemMeta(winningItemStackItemMeta);
+		winningItemStackItemMeta.setLore(this.lore);
+		winningItemStack.setItemMeta(winningItemStackItemMeta);
 
         if (config.isSet(path + ".Enchantments")) {
             List<?> enchtantments = config.getList(path + ".Enchantments");
@@ -143,18 +144,9 @@ public class Winning {
             }
         }
 
-        if (config.isSet(path + ".Lore")) {
-            List<?> lines = config.getList(path + ".Lore");
-            for (Object object : lines) {
-                String line = (String) object;
-                this.lore.add(ChatColor.translateAlternateColorCodes('&', line));
-            }
-        }
-
-
-        previewItemStackItemMeta = previewItemStack.getItemMeta();
-        List<String> lore = this.lore;
-        if (percentage > 0) {
+		previewItemStackItemMeta = previewItemStack.getItemMeta();
+		List<String> lore = new ArrayList<String>(this.lore);
+		if (percentage > 0) {
             // Percentage
             lore.add(ChatColor.LIGHT_PURPLE + "");
             lore.add("" + ChatColor.LIGHT_PURPLE + percentage + "% Chance");

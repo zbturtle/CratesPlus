@@ -102,7 +102,7 @@ public class SettingsHandler {
         final Inventory inventory = Bukkit.createInventory(null, 54, "Edit " + crate.getName(false) + " Crate Winnings");
 
         for (Winning winning : crate.getWinnings()) {
-            inventory.addItem(winning.getPreviewItemStack());
+            inventory.addItem(winning.getWinningItemStack());
         }
 
         Bukkit.getScheduler().runTaskLater(CratesPlus.getPlugin(), new Runnable() {
