@@ -1,0 +1,22 @@
+In Main:
+
+File placeholders;
+FileConfiguration placeholdersf;
+
+@Overide
+public void OnEnable() {
+
+placeholders = new File("plugins/CratesPlus/placeholders.yml");
+chatSwearBlockedf = YamlConfiguration.loadConfiguration(placeholders);
+List<String> list = placeholders.getStringList("placeholders");
+if(list == null)
+{
+list = Arrays.asList();
+}
+list.add("playername - %player%");
+placeholdersf.addDefault("placeholders", list);
+
+placeholdersf.options().copyDefaults(true);
+	    
+savePlaceholders();
+}
